@@ -10,7 +10,7 @@ from ..encoders import GraphosEncoder
 class BaseChart(object):
 
     def __init__(self, data_source, html_id=None,
-                 width=None, height=None, var_name=None,
+                 width=None, height=None, chart_var_name=None,
                  options=None, encoder=GraphosEncoder,
                  *args, **kwargs):
         """
@@ -24,7 +24,7 @@ class BaseChart(object):
         self.html_id = html_id or get_random_string()
         self.height = height or DEFAULT_HEIGHT
         self.width = width or DEFAULT_WIDTH
-        self.var_name = var_name
+        self.chart_var_name = chart_var_name
         self.options = options or {}
         self.header = data_source.get_header()
         self.encoder = encoder
