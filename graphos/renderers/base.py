@@ -10,7 +10,7 @@ from ..encoders import GraphosEncoder
 class BaseChart(object):
 
     def __init__(self, data_source, html_id=None,
-                 width=None, height=None, var_name=None
+                 width=None, height=None, var_name=None,
                  options=None, encoder=GraphosEncoder,
                  *args, **kwargs):
         """
