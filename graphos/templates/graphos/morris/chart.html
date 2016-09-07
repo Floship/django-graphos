@@ -21,5 +21,10 @@ var morris_dict = {
 for(option in options) {
   morris_dict[option] = options[option];
 }
-new Morris.{{ chart.chart_type }}(morris_dict);
+
+{% if chart.chart_var_name %}
+  var {{ chart.chart_var_name }} = new Morris.{{ chart.chart_type }}(morris_dict);
+{% else %}
+  new Morris.{{ chart.chart_type }}(morris_dict);
+{% endif %}
 </script>
